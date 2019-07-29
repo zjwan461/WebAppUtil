@@ -8,16 +8,18 @@ import java.util.Random;
  */
 public class RandomUtil {
 
-    public static void getRamdonString(int length) {
+    private static String ALL_CHAR = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    public static String getRamdonString(int length) {
         length = Math.abs(length);
         StringBuffer sb = new StringBuffer();
-        String ALLCHAR = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
         Random random = new Random();
         for (int i = 0; i < length; i++) {
-            sb.append(ALLCHAR.charAt(random.nextInt(ALLCHAR.length())));
+            sb.append(ALL_CHAR.charAt(random.nextInt(ALL_CHAR.length())));
         }
 
-        System.out.println(sb.toString());
+        return sb.toString();
     }
 
     public static void main(String[] args) {
